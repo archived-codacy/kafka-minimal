@@ -11,4 +11,5 @@ A minimal docker image to run Apache Kafka for testing purposes
 `docker run -it -p 2181:2181 -p 9092:9092 codacy/kafka-minimal`
 
 If you want to set another host name for the `advertised.host.name` setting:
+
 `docker run -it -p 2181:2181 -p 9092:9092 -e ADVERTISED_HOST=<other_hostname> codacy/kafka-minimal`
