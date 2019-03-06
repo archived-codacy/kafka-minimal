@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:latest as build
 
 ENV SCALA_VERSION 2.11
 ENV KAFKA_VERSION 2.1.0
@@ -16,7 +16,7 @@ ENV KAFKA_HOME /opt/kafka_"$SCALA_VERSION"-"$KAFKA_VERSION"
 
 RUN apk add --no-cache bash
 
-COPY --from=0 "/tmp/kafka_${SCALA_VERSION}-${KAFKA_VERSION}" "/opt/kafka_${SCALA_VERSION}-${KAFKA_VERSION}"
+COPY --from=build "/tmp/kafka_${SCALA_VERSION}-${KAFKA_VERSION}" "/opt/kafka_${SCALA_VERSION}-${KAFKA_VERSION}"
 
 COPY scripts/run.sh $KAFKA_HOME/run.sh
 
