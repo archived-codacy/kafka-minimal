@@ -1,25 +1,20 @@
-FROM java:openjdk-8-jre
+FROM alpine
 
 ENV SCALA_VERSION 2.11
 ENV KAFKA_VERSION 2.1.0
 
-RUN apt-get update
-RUN apt-get install -y wget
+RUN apk add --no-cache wget
 RUN wget -q "http://mirrors.up.pt/pub/apache/kafka/${KAFKA_VERSION}/kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz" -O "/tmp/kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz"
 RUN tar -xzf "/tmp/kafka_${SCALA_VERSION}-${KAFKA_VERSION}.tgz" -C "/tmp"
 
 # Kafka and Zookeeper
-FROM java:openjdk-8-jre
+FROM java:openjdk-8-jre-alpine
 
-ENV DEBIAN_FRONTEND noninteractive
 ENV SCALA_VERSION 2.11
 ENV KAFKA_VERSION 2.1.0
 ENV KAFKA_HOME /opt/kafka_"$SCALA_VERSION"-"$KAFKA_VERSION"
 
-RUN apt-get update && \
-    apt-get install -y netcat && \
-    rm -rf /var/lib/apt/lists/* && \
-    apt-get clean
+RUN apk add --no-cache bash
 
 COPY --from=0 "/tmp/kafka_${SCALA_VERSION}-${KAFKA_VERSION}" "/opt/kafka_${SCALA_VERSION}-${KAFKA_VERSION}"
 
