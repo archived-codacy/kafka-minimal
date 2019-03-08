@@ -15,6 +15,7 @@ wait_zookeeper() {
 
 run_kafka() {
     echo -e "\nadvertised.host.name=${ADVERTISED_HOST:-localhost}" >> config/server.properties
+    echo -e "\nadvertised.port=${ADVERTISED_PORT:-9092}" >> config/server.properties
     bin/kafka-server-start.sh config/server.properties | sed "s/^/[kafka-broker] /"
 }
 
