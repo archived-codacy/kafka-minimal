@@ -1,6 +1,6 @@
 # kafka-minimal
 [![CircleCI](https://circleci.com/gh/codacy/kafka-minimal.svg?style=svg)](https://circleci.com/gh/codacy/kafka-minimal)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/11f09c91c28644718046c41164e56b0d)](https://www.codacy.com/app/Codacy/kafka-minimal?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=codacy/kafka-minimal&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/11f09c91c28644718046c41164e56b0d)](https://www.codacy.com/gh/codacy/kafka-minimal?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=codacy/kafka-minimal&amp;utm_campaign=Badge_Grade)
 [![](https://images.microbadger.com/badges/image/codacy/kafka-minimal.svg)](https://microbadger.com/images/codacy/kafka-minimal "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/codacy/kafka-minimal.svg)](https://microbadger.com/images/codacy/kafka-minimal "Get your own version badge on microbadger.com")
 
